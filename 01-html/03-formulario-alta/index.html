@@ -8,7 +8,82 @@
   <body>
     <main>
       <h1>Crear cuenta</h1>
-      <!-- Construye aquí el formulario. -->
+      <form>
+        <!--
+          Probé a cambiar el mensaje de error en html, aunque la solución que encontré
+          ya no sería utilizando capacidades nativas de HTML únicamente
+
+          Con esta primera forma forma el mensaje personalizado se muestra al intentar
+          hacer un submit pero setCustmoValidity('') no solo oculta el mensaje, 
+          sino que restaura el mensaje de error por defecto, no ponerlo mantendría
+          el mensaje de error en pantalla aunque el input sea válido.
+
+            oninvalid="this.setCustomValidity('El nombre debe contener entre 3 y 40 letras')"
+            oninput="this.setCustomValidity('')"
+
+          Con este otra version el mensaje se muestra únicamente cuando el input es inválido,
+          manteniendo el mensaje personalizado y desapareciendo cuando es válido, aun así 
+          decidí no ponerlo por ser un ejercicio de únicamente html
+
+            oninput="
+              if(this.validity.patternMismatch) {
+                this.setCustomValidity('El nombre debe contener entre 3 y 40 letras');
+              } else {
+                this.setCustomValidity('');
+              }
+              this.reportValidity();"
+        -->
+        <fieldset>
+          <legend> Formulario alta de usuario</legend>
+          <fieldset>
+            <legend> Datos del usuario</legend>
+            <label for="nombre">Nombre completo*: (Debe contener entre 3 y 50 letras)</label> <br>
+              <input 
+                type="text" 
+                name="nombre" 
+                required 
+                minlength="3"
+                pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]{3,50}"
+                placeholder="Nombre Apellido1 Apellido2"
+              /> <br>
+              
+            <label for="email">Email*: (Debe contener entre 7 y 50 caracteres ajustandose al patrón nombre@proveedor.dominio)</label> <br>
+              <input 
+                type="email" 
+                name="email" 
+                required 
+                minlength="7" 
+                maxlength="50" 
+                pattern="[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]"
+                placeholder="usuario@proveedor.dominio"
+              /> <br>
+                    
+            <label for="contraseña">Contraseña*: (Debe contener al menos 8 caracteres)</label> <br>
+              <input type="password" name="contraseña" required minlength="8"><br>
+                    
+            <label for="fecha-nacimiento">Fecha de nacimiento*:</label> <br>
+              <input type="date" name="fecha-nacimiento" required min="1900-01-01"> <br>
+            
+            <label for="país">País*:</label> <br>
+              <select name="país" required>
+                <option value=""> Selecciona un país </option>
+                <option value="ES"> España </option>
+                <option value="Otro"> Otro </option>
+              </select>
+          </fieldset>
+        <label for="preferencia"> Preferencia de contacto:</label> <br>
+          <input type="radio" name="preferencia" value="email"> Email <br>
+          <input type="radio" name="preferencia" value="teléfono"> Teléfono <br>
+        
+        <label for="terminos"> Aceptación de términos*:</label> <br>
+          <input type="checkbox" name="terminos" required> Acepto los términos y condiciones <br>
+        
+        <label for="comentarios"> Comentarios opcionales:</label> <br>
+        <textarea name="comentarios"> </textarea> <br>
+  
+        <input type="submit" value="Crear usuario">
+        </fieldset>
+      </form>
     </main>
   </body>
 </html>
