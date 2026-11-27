@@ -3,9 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO: perfil profesional</title>
+    <title>Perfil profesional</title>
   </head>
   <body>
-    <!-- Construye aquí la página usando HTML semántico. -->
+    <h1>Alejandro Díaz Gómez</h1>
+    <h2>Rising Engineer NTT DATA</h2>
+
+    <button
+      type="button"
+      onclick="location.href='#sobre-mi'"
+      
+    >Sobre mí</button>
+
+    <button
+      type="button"
+      onclick="location.href='#experiencia'"
+      
+    >Ir a Experiencia</button>
+
+    <button
+      type="button"
+      onclick="location.href='#tecnologias'"
+      
+    >Ir a Tecnologías usadas</button>
+
+    <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy desarrollador backend on un año de experiencia aprendiendo sobre frontend, me encanta aprender nuevas tecnologías y trabajar en equipo.
+        </p>
+        <a href="https://github.com/adiazgom13/" target="_blank">
+          GitHub
+        </a>
+        <h3>Contacto</h3>
+          <p>Correo: adiazgom@emeal.nttdata.com</p>
+      </section>
+
+    <section id="experiencia">
+      <h2>Experiencia</h2>
+
+      <article>
+        <h3>Proyecto Configuración de Entorno de Desarrollo</h3>
+        <p><time datetime="2026-07">Julio de 2021</time> - Actualidad</p>
+        <p>
+          Realización de pruebas y validaciones en entornos de desarrollo, comprobando el correcto funcionamiento de
+          nuevas funcionalidades, detectando incidencias y verificando integraciones antes de su despliegue.
+          Experiencia trabajando con procesos de desarrollo en los que intervienen múltiples organizaciones, mejorando
+          la capacidad de coordinación y resolución de problemas en entornos colaborativos.
+        </p>
+      </article>
+
+      <article>
+        <h3>Proyectos Innovación Nestlé</h3>
+        
+        <p><time datetime="2025-03">Marzo de 2025</time> - <time datetime="2026-05">Mayo de 2026</time></p>
+        <p>
+          Tareas principalmente de Backend, creación de servicios, uso de librerías LangChain y LangGraph, consultas base de datos, manejo de excepciones,
+          edición de prompts y documentación del proyecto.
+        </p>
+      </article>
+    </section>
+
+    <section id="tecnologias">
+        <h2>Tecnologías usadas</h2>
+        <ul>
+          <li>Git</li>
+          <li>Postman</li>
+          <li>Python</li>
+          <li>LangChain</li>
+          <li>LangGraph</li>
+          <li>JavaScript</li>
+          <li>Angular</li>
+          <li>React</li>
+          <li>CosmosDB</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </section>
+
+    <!--  
+      
+      Quería probar cosas diferentes usando únicamente html,
+      como no encaja con el resto de la página me da la oportunidad
+      de usar también los comentarios de html
+
+    <h3>Contador de clics en una misma sesión: 0</h3>
+    <p id="msg" hidden>Sin javascript no.</p>
+    <button
+      type="button"
+      onclick="document.getElementById('msg').hidden=!document.getElementById('msg').hidden"
+    >Pulsar</button>
+    -->
+
+    <footer>
+      Alejandro Díaz Gómez - 2026
+    </footer>
   </body>
+  
 </html>
+
